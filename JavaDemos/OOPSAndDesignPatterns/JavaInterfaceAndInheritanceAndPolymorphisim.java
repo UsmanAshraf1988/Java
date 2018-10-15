@@ -47,14 +47,17 @@ class Car extends AbstractCar{
 		System.out.println("Car");
 	}
 	
+	@Override
 	public synchronized void setSpeed(double speed){
 		mSpeed = speed*(toleranceFactor*1);
 	}
 	
+	@Override
 	public double getSpeed(){
 		return mSpeed;
 	}
 	
+	@Override
 	public String toString(){
 		return "Car";
 	}
@@ -67,10 +70,12 @@ class BMW extends Car{
 		System.out.println("BMW");
 	}	
 	
+	@Override
 	public synchronized void setSpeed(double speed){
 		mSpeed = speed*(toleranceFactor*1.05);
 	}
 	
+	@Override
 	public String toString(){
 		return "BMW";
 	}	
@@ -82,10 +87,12 @@ class WV extends Car{
 		System.out.println("WV");
 	}
 	
+	@Override
 	public synchronized void setSpeed(double speed){
 		mSpeed = speed*(toleranceFactor*1.03);
 	}
 	
+	@Override
 	public String toString(){
 		return "WV";
 	}	
