@@ -102,7 +102,7 @@ class ObjectFactory{
 
 	/**
 	 * polymorphisim: specialized bmw or wv are being owned by car which can 
-	 * in further be owned by an abstract car or car.
+	 * in further be owned by a Vehicle, an abstract car or a car.
 	 */
 	public static Car getObject(String str){
 		if( str=="BMW" ){
