@@ -3,7 +3,7 @@
  *
  *
  * @brief It is the demo of interface, abstract class, inheritance, polymorhpisim
- *        and object factory design pattern in Java.
+ *        and object factory design pattern in a thread safe way in Java.
  * 
  *
  * @Author Usman Ashraf 
@@ -47,7 +47,7 @@ class Car extends AbstractCar{
 		System.out.println("Car");
 	}
 	
-	public void setSpeed(double speed){
+	public synchronized void setSpeed(double speed){
 		mSpeed = speed*(toleranceFactor*1);
 	}
 	
@@ -67,7 +67,7 @@ class BMW extends Car{
 		System.out.println("BMW");
 	}	
 	
-	public void setSpeed(double speed){
+	public synchronized void setSpeed(double speed){
 		mSpeed = speed*(toleranceFactor*1.05);
 	}
 	
@@ -82,7 +82,7 @@ class WV extends Car{
 		System.out.println("WV");
 	}
 	
-	public void setSpeed(double speed){
+	public synchronized void setSpeed(double speed){
 		mSpeed = speed*(toleranceFactor*1.03);
 	}
 	
@@ -104,7 +104,7 @@ class ObjectFactory{
 	 * polymorphisim: specialized bmw or wv are being owned by car which can 
 	 * in further be owned by a Vehicle, an abstract car or a car.
 	 */
-	public static Car getObject(String str){
+	public static synchronized Car getObject(String str){
 		if( str=="BMW" ){
 			if(bmw==null){
 				bmw = new BMW();
