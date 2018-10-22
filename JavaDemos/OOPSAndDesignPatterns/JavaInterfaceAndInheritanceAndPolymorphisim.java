@@ -21,7 +21,7 @@ import java.io.*;
 /* Interface. */
 interface Vehicle{
 	
-	public final double toleranceFactor = 0.95;
+	public static final double toleranceFactor = 0.95;
 	
 	public abstract void setSpeed(double speed);
 	public abstract double getSpeed();
